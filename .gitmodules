@@ -1,0 +1,3 @@
+[submodule "PaciQmlWidgets"]
+	path = PaciQmlWidgets
+	url = git@github.com:LambdaXIII/PaciQmlWidgets.git

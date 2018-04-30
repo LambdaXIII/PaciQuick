@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>PaciQmlWidgets/TestRect.qml</file>
+    </qresource>
+</RCC>
