@@ -1,5 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
+import QtQuick.Controls 2.2
 import Paci.UI 1.0
 
 PWindow {
@@ -13,9 +14,12 @@ PWindow {
 
     message: UIBrain.statusMessage
 
-    MouseArea {
-        anchors.fill: parent
-        onPressed: UIBrain.statusMessage = "Pressed"
-        onExited: UIBrain.statusMessage = ""
+    PButton {
+        anchors.centerIn: parent
+        width: 200
+        height: 100
+        text: "GOGOGOGO"
+        ToolTip.visible: hovered
+        ToolTip.text: "This is a tooltip."
     }
 }

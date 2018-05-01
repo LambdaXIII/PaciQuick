@@ -1,7 +1,12 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    MainApp
+CandyQt \
+PaciCore \
+PaciFormat
+
+SUBDIRS += MainApp
+
 
 
 DISTFILES += .gitignore \

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../PaciQmlWidgets/PButton.qml</file>
+        <file>../PaciQmlWidgets/PTitleBar.qml</file>
+        <file>../PaciQmlWidgets/PWindow.qml</file>
+        <file>../PaciQmlWidgets/TestRect.qml</file>
+    </qresource>
+</RCC>
