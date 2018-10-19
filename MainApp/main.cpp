@@ -1,15 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "uibrain.h"
+#include "brains.h"
 
-QObject* uiBrainSingletonProvider(QQmlEngine *engine, QJSEngine *scriptEngine)
-{
-  Q_UNUSED(engine)
-  Q_UNUSED(scriptEngine)
-
-  UIBrain *single = new UIBrain();
-  return single;
-}
 
 
 int main(int argc, char *argv[])
@@ -22,8 +15,7 @@ int main(int argc, char *argv[])
   app.setApplicationVersion("0.1");
 
 
-  qmlRegisterSingletonType<UIBrain>("Paci.UI", 1, 0, "UIBrain", uiBrainSingletonProvider);
-
+  preparing::regesterBrains();
 
 
   QQmlApplicationEngine engine;

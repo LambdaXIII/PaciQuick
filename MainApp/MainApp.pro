@@ -14,7 +14,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    uibrain.cpp
+    uibrain.cpp \
+    docbrain.cpp \
+    brains.cpp \
+    loaderagent.cpp \
+    formats/formatprofile.cpp
 
 RESOURCES += qml.qrc \
     ../PaciQmlWidgets/pwidgets.qrc
@@ -31,4 +35,29 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    uibrain.h
+    uibrain.h \
+    docbrain.h \
+    brains.h \
+    loaderagent.h \
+    formats/formatprofile.h
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../CandyQt/release/ -lCandyQt
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../CandyQt/debug/ -lCandyQt
+else:unix: LIBS += -L$$OUT_PWD/../CandyQt/ -lCandyQt
+
+INCLUDEPATH += $$PWD/../CandyQt
+DEPENDPATH += $$PWD/../CandyQt
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../PaciCore/release/ -lPaciCore
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../PaciCore/debug/ -lPaciCore
+else:unix: LIBS += -L$$OUT_PWD/../PaciCore/ -lPaciCore
+
+INCLUDEPATH += $$PWD/../PaciCore
+DEPENDPATH += $$PWD/../PaciCore
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../PaciFormat/release/ -lPaciFormat
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../PaciFormat/debug/ -lPaciFormat
+else:unix: LIBS += -L$$OUT_PWD/../PaciFormat/ -lPaciFormat
+
+INCLUDEPATH += $$PWD/../PaciFormat
+DEPENDPATH += $$PWD/../PaciFormat
